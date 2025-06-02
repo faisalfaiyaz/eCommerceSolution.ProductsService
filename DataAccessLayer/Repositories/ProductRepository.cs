@@ -50,7 +50,7 @@ public class ProductRepository : IProductRepository
 
     public async Task<Product?> UpdateProduct(Product product)
     {
-        Product? existingProduct = await _db.Products.FirstOrDefaultAsync(p => p.ProductId == product.ProductId);
+        Product? existingProduct = await _db.Products.FirstOrDefaultAsync(p => p.ProductID == product.ProductID);
 
         if (existingProduct == null)
         {
