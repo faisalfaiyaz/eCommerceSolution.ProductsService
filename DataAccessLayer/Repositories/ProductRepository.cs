@@ -17,6 +17,10 @@ public class ProductRepository : IProductRepository
 
     public async Task<Product?> AddProduct(Product product)
     {
+        if(product == null)
+        {
+            throw new ArgumentNullException(nameof(product), "Product cannot be null.");
+        }
         await _db.Products.AddAsync(product);
         await _db.SaveChangesAsync();
 
