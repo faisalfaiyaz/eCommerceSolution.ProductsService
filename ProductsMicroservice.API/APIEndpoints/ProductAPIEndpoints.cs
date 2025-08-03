@@ -55,7 +55,7 @@ public static class ProductAPIEndpoints
 
             ProductResponse? addedProductResponce = await service.AddProduct(productAddRequest);
 
-            if (addedProductResponce != null)
+            if (addedProductResponce is not null)
             {
                 return Results.Created($"/api/products/search/product-id/{addedProductResponce.ProductID}", addedProductResponce);
             }

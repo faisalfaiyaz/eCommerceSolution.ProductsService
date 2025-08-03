@@ -11,7 +11,7 @@ public class ProductUpdateRequestValidator : AbstractValidator<ProductUpdateRequ
             .NotEmpty().WithMessage("ProductId can't be blank.");
 
         RuleFor(req => req.ProductName)
-            .NotEmpty().WithMessage("Product Name can't be blank");
+            .NotEmpty().WithMessage("Product Name can't be blank.");
 
         RuleFor(req => req.Category)
             .IsInEnum().WithMessage("Invalid Category");
